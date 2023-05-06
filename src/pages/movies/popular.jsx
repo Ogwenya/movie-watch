@@ -1,12 +1,11 @@
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 import { useRouter } from "next/router";
-import { Inter } from "@next/font/google";
 import { fetchFilms } from "@/utils/fetchFilms";
 import CardList from "@/components/CardList";
 import { Center, Loader } from "@mantine/core";
 
 export async function getStaticProps() {
-  const result = await fetchFilms("/trending/movie/week");
+  const result = await fetchFilms("/movie/popular");
 
   return {
     props: {
@@ -16,7 +15,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ result }) {
+const popular = ({ result }) => {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -27,5 +26,12 @@ export default function Home({ result }) {
     );
   }
 
-  return <CardList data={result} />;
-}
+  return (
+    <>
+      <NextSeo title="Popular Movies" />
+      <CardList data={result} />
+    </>
+  );
+};
+
+export default popular;
