@@ -15,7 +15,7 @@ export async function getStaticProps() {
   };
 }
 
-const currentlyAiring = ({ result }) => {
+const CurrentlyAiring = ({ result }) => {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -34,4 +34,4 @@ const currentlyAiring = ({ result }) => {
   );
 };
 
-export default currentlyAiring;
+export default CurrentlyAiring;

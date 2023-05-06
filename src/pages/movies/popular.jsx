@@ -15,7 +15,7 @@ export async function getStaticProps() {
   };
 }
 
-const popular = ({ result }) => {
+const Popular = ({ result }) => {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -34,4 +34,4 @@ const popular = ({ result }) => {
   );
 };
 
-export default popular;
+export default Popular;

@@ -15,7 +15,7 @@ export async function getStaticProps() {
   };
 }
 
-const upcoming = ({ result }) => {
+const Upcoming = ({ result }) => {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -34,4 +34,4 @@ const upcoming = ({ result }) => {
   );
 };
 
-export default upcoming;
+export default Upcoming;

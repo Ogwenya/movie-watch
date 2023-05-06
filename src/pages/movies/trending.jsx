@@ -15,7 +15,7 @@ export async function getStaticProps() {
   };
 }
 
-const trending = ({ result }) => {
+const Trending = ({ result }) => {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -34,4 +34,4 @@ const trending = ({ result }) => {
   );
 };
 
-export default trending;
+export default Trending;

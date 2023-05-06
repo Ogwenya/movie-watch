@@ -15,7 +15,7 @@ export async function getStaticProps() {
   };
 }
 
-const topRated = ({ result }) => {
+const TopRated = ({ result }) => {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -33,4 +33,4 @@ const topRated = ({ result }) => {
   );
 };
 
-export default topRated;
+export default TopRated;
