@@ -43,6 +43,9 @@ export async function getStaticPaths() {
 }
 
 const SeriesDetail = ({ film, trailer }) => {
+  console.log("{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{");
+  console.log(film);
+  console.log("{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{");
   const router = useRouter();
 
   if (router.isFallback) {
