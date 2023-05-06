@@ -2,9 +2,9 @@
 
 ![screenshot 2](/public/images/screenshots/screenshot2.png)
 
-[View Live URL]("https://movie-watch-zeta.vercel.app/")
+[View Live URL](https://movie-watch-zeta.vercel.app/)
 
-This website bilt with Nextjs and uses the [tmdb api]("https://developers.themoviedb.org/3/getting-started/introduction") to fetch movies and Tv series details.
+This website bilt with Nextjs and uses the [tmdb api](https://developers.themoviedb.org/3/getting-started/introduction) to fetch movies and Tv series details.
 
 #### ENV Variables
 
