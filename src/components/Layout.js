@@ -1,4 +1,4 @@
-import { useMantineTheme, AppShell, Box } from "@mantine/core";
+import { useMantineTheme, AppShell, Box, rem } from "@mantine/core";
 import AppHeader from "./Header";
 
 const Layout = ({ children, ...pageProps }) => {
@@ -16,7 +16,9 @@ const Layout = ({ children, ...pageProps }) => {
         },
       })}
     >
-      <Box py={30}>{children}</Box>
+      <Box py={30} maw={rem("1440px")} mx={"auto"}>
+        {children}
+      </Box>
     </AppShell>
   );
 };

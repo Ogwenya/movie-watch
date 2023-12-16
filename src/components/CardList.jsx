@@ -8,12 +8,13 @@ const CardList = ({ data }) => {
 
   return (
     <SimpleGrid
-      cols={5}
+      cols={6}
       spacing="lg"
       breakpoints={[
-        { maxWidth: "62rem", cols: 3, spacing: "md" },
-        { maxWidth: "48rem", cols: 2, spacing: "sm" },
-        { maxWidth: "36rem", cols: 1, spacing: "sm" },
+        { maxWidth: "lg", cols: 4, spacing: "md" },
+        { maxWidth: "md", cols: 3, spacing: "md" },
+        { maxWidth: "sm", cols: 2, spacing: "sm" },
+        { maxWidth: "22rem", cols: 1, spacing: "sm" },
       ]}
     >
       {data.map((film) => (
@@ -42,8 +43,12 @@ const CardList = ({ data }) => {
               wrap="nowrap"
             >
               {/* film.title: for movies && film.name: for series */}
-              <Text p="sm">{film.title || film.name}</Text>
-              <Text p="sm">{film.vote_average}</Text>
+              <Text p="sm" fz={"sm"}>
+                {film.title || film.name}
+              </Text>
+              <Text p="sm" fz={"sm"}>
+                {film.vote_average}
+              </Text>
             </Flex>
           </Link>
         </Card>
