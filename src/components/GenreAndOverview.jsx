@@ -1,6 +1,7 @@
 "use client";
 
 import { Text, Box, Pill } from "@mantine/core";
+import classes from "@/app/FilmDetails.module.css";
 
 const GenreAndOverview = ({ overview, genres }) => {
   return (
@@ -11,9 +12,7 @@ const GenreAndOverview = ({ overview, genres }) => {
         {genres.map((genre) => (
           <Pill
             size="md"
-            bg={
-              "light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-5))"
-            }
+            className={classes.trailer_not_available}
             key={genre.id}
           >
             {genre.name}

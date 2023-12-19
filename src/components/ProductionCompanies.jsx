@@ -1,15 +1,14 @@
 "use client";
 
 import { Image, Card, Text, SimpleGrid, UnstyledButton } from "@mantine/core";
+import classes from "@/app/FilmDetails.module.css";
 
 const ProductionCompanies = ({ companies }) => {
   return (
     <Card
       withBorder
       radius="md"
-      bg={
-        "light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6))"
-      }
+      className={classes.company_card}
       w={{ base: "100%", sm: "max-content" }}
       maw={{ base: "100%", sm: "fit-content" }}
     >
@@ -19,9 +18,8 @@ const ProductionCompanies = ({ companies }) => {
         {companies.map((company) => (
           <UnstyledButton
             key={company.name}
-            w={"8rem"}
-            h={"8rem"}
-            className="company-button"
+            w={{ base: "auto", sm: "8rem" }}
+            className={classes.company_button}
           >
             <Image
               src={`https://image.tmdb.org/t/p/w500${company.logo_path}`}

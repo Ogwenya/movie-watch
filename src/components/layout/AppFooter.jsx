@@ -3,12 +3,7 @@ import { Box, Container, Flex, Text, rem } from "@mantine/core";
 
 const AppFooter = () => {
   return (
-    <Box
-      bg={
-        "light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6))"
-      }
-      py={"xl"}
-    >
+    <Box className="footer" py={"xl"}>
       <Container maw={rem("1440px")} mx={"auto"}>
         <Flex
           justify={"space-between"}

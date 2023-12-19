@@ -14,6 +14,7 @@ import {
   Grid,
 } from "@mantine/core";
 import { IconCoin, IconReceipt } from "@/icons/Icons";
+import classes from "@/app/FilmDetails.module.css";
 
 const OtherStats = ({ film }) => {
   // function to format currency
@@ -27,9 +28,7 @@ const OtherStats = ({ film }) => {
   return (
     <Card
       radius="md"
-      bg={
-        "light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6))"
-      }
+      className={classes.stats_container}
       maw={rem("530px")}
       withBorder
     >

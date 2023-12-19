@@ -29,10 +29,7 @@ const EpisodeOverview = ({ film }) => {
             labelPosition="center"
             label={<Text tt={"uppercase"}>Episodes</Text>}
           />
-          <SimpleGrid
-            cols={2}
-            breakpoints={[{ maxWidth: "36rem", cols: 1, spacing: "sm" }]}
-          >
+          <SimpleGrid cols={{ base: 1, sm: 2 }}>
             {/* current episode */}
             <Episode_card
               title={"Latest Episode"}

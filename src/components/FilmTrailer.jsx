@@ -2,6 +2,7 @@
 
 import { Image, Grid, Paper, Group, Title, Box } from "@mantine/core";
 import { IconVideoOff } from "@/icons/Icons";
+import classes from "@/app/FilmDetails.module.css";
 
 const FilmTrailer = ({ poster, trailer, filmTitle }) => {
   return (
@@ -32,12 +33,7 @@ const FilmTrailer = ({ poster, trailer, filmTitle }) => {
             )}
           </>
         ) : (
-          <Paper
-            h="100%"
-            bg={
-              "light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6))"
-            }
-          >
+          <Paper h="100%" className={classes.trailer_not_available}>
             <Group h={"100%"} justify="center" spacing="lg">
               <Box w={{ base: 80, sm: 150 }}>
                 <IconVideoOff />
