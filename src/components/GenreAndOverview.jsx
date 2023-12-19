@@ -1,22 +1,28 @@
-import { Badge, Text, Box, Flex } from "@mantine/core";
-import { useMediaQuery } from "@mantine/hooks";
+"use client";
+
+import { Text, Box, Pill } from "@mantine/core";
 
 const GenreAndOverview = ({ overview, genres }) => {
-  const isMobile = useMediaQuery("(max-width: 50em)");
-
   return (
     <>
       {/* genres */}
-      <Flex mt={20} gap="xs" wrap="wrap">
+
+      <Pill.Group mt={20}>
         {genres.map((genre) => (
-          <Badge variant="outline" size="lg" color="gray" key={genre.id}>
+          <Pill
+            size="md"
+            bg={
+              "light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-5))"
+            }
+            key={genre.id}
+          >
             {genre.name}
-          </Badge>
+          </Pill>
         ))}
-      </Flex>
+      </Pill.Group>
 
       {/* overview */}
-      <Box w={isMobile ? "100%" : "70%"} mt={15}>
+      <Box w={{ base: "100%", sm: "70%" }} mt={15}>
         <Text>{overview}</Text>
       </Box>
     </>

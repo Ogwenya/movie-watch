@@ -1,26 +1,39 @@
-import { Divider, Title, Paper, Flex, Image } from "@mantine/core";
+"use client";
+
+import { Image, Card, Text, SimpleGrid, UnstyledButton } from "@mantine/core";
 
 const ProductionCompanies = ({ companies }) => {
   return (
-    <>
-      <Divider my="xl" />
-      <Title order={5} mb="md">
-        Production Companies
-      </Title>
-      <Flex gap="md" wrap="wrap">
+    <Card
+      withBorder
+      radius="md"
+      bg={
+        "light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6))"
+      }
+      w={"max-content"}
+      maw={"fit-content"}
+    >
+      <Text fw={700}>Production Companies</Text>
+
+      <SimpleGrid cols={3} mt="md">
         {companies.map((company) => (
-          <Paper key={company.name} shadow="lg" p="md">
+          <UnstyledButton
+            key={company.name}
+            w={"8rem"}
+            h={"8rem"}
+            className="company-button"
+          >
             <Image
-              width={120}
               src={`https://image.tmdb.org/t/p/w500${company.logo_path}`}
-              caption={company.name}
-              alt={company.name}
-              withPlaceholder
+              fallbackSrc="/images/image_placeholder.jpg"
+              maw={"90%"}
+              mah={"90%"}
+              fit="contain"
             />
-          </Paper>
+          </UnstyledButton>
         ))}
-      </Flex>
-    </>
+      </SimpleGrid>
+    </Card>
   );
 };
 

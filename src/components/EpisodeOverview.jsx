@@ -1,5 +1,24 @@
 import { SimpleGrid, Paper, Title, Text, Divider } from "@mantine/core";
 
+const Episode_card = ({
+  title,
+  episode_number,
+  episode_name,
+  episode_overview,
+}) => {
+  return (
+    <Paper shadow="xs" p="xl" withBorder>
+      <Title order={4} mb={15} c={"dimmed"}>
+        {title}
+      </Title>
+      <Text fw={700} mb={10} tt={"uppercase"}>
+        Episode {episode_number}: {episode_name}
+      </Text>
+      <Text>{episode_overview}</Text>
+    </Paper>
+  );
+};
+
 const EpisodeOverview = ({ film }) => {
   return (
     <>
@@ -8,36 +27,28 @@ const EpisodeOverview = ({ film }) => {
           <Divider
             my="xl"
             labelPosition="center"
-            label={<Text>Episodes</Text>}
+            label={<Text tt={"uppercase"}>Episodes</Text>}
           />
           <SimpleGrid
             cols={2}
             breakpoints={[{ maxWidth: "36rem", cols: 1, spacing: "sm" }]}
           >
             {/* current episode */}
-            <Paper shadow="xs" p="xl">
-              <Title order={4} mb={15}>
-                Latest Episode
-              </Title>
-              <Text fw={700} mb={10}>
-                Episode {film.last_episode_to_air.episode_number}:{" "}
-                {film.last_episode_to_air.name}
-              </Text>
-              <Text>{film.last_episode_to_air.overview}</Text>
-              <Divider orientation="vertical" />
-            </Paper>
+            <Episode_card
+              title={"Latest Episode"}
+              episode_number={film.last_episode_to_air.episode_number}
+              episode_name={film.last_episode_to_air.name}
+              episode_overview={film.last_episode_to_air.overview}
+            />
+
             {/* next episode */}
             {film.next_episode_to_air && (
-              <Paper shadow="xs" p="xl">
-                <Title order={4} mb={15}>
-                  Next Episode
-                </Title>
-                <Text fw={700} mb={10}>
-                  Episode {film.next_episode_to_air.episode_number}:{" "}
-                  {film.next_episode_to_air.name}
-                </Text>
-                <Text>{film.next_episode_to_air.overview}</Text>
-              </Paper>
+              <Episode_card
+                title={"Next Episode"}
+                episode_number={film.next_episode_to_air.episode_number}
+                episode_name={film.next_episode_to_air.name}
+                episode_overview={film.next_episode_to_air.overview}
+              />
             )}
           </SimpleGrid>
         </>

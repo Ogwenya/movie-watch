@@ -1,23 +1,22 @@
-import { Image, Grid, Paper, Group, Title } from "@mantine/core";
-import { useMediaQuery } from "@mantine/hooks";
-import { IconVideoOff } from "@tabler/icons-react";
+"use client";
+
+import { Image, Grid, Paper, Group, Title, Box } from "@mantine/core";
+import { IconVideoOff } from "@/icons/Icons";
 
 const FilmTrailer = ({ poster, trailer, filmTitle }) => {
-  const isMobile = useMediaQuery("(max-width: 50em)");
-
   return (
-    <Grid columns={isMobile ? 1 : 2}>
-      <Grid.Col span={!isMobile && "content"} h="100%">
+    <Grid>
+      <Grid.Col span={{ base: 12, sm: "content" }}>
         <Image
           src={`https://image.tmdb.org/t/p/w500${poster}`}
           loading="lazy"
           alt={filmTitle}
-          height={!isMobile && 380}
+          h={{ sm: 380 }}
+          w={{ base: "80%", sm: "100%" }}
+          mx={"auto"}
         />
       </Grid.Col>
-
-      {/* trailer */}
-      <Grid.Col span={!isMobile && "auto"}>
+      <Grid.Col span={{ base: 12, sm: "auto" }}>
         {trailer ? (
           <>
             {trailer.site.toLowerCase() === "youtube" && (
@@ -33,9 +32,16 @@ const FilmTrailer = ({ poster, trailer, filmTitle }) => {
             )}
           </>
         ) : (
-          <Paper h="100%">
-            <Group h="100%" position="center" spacing="lg">
-              <IconVideoOff size="4rem" />
+          <Paper
+            h="100%"
+            bg={
+              "light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6))"
+            }
+          >
+            <Group h={"100%"} justify="center" spacing="lg">
+              <Box w={{ base: 80, sm: 150 }}>
+                <IconVideoOff />
+              </Box>
               <Title order={3}>Not Available</Title>
             </Group>
           </Paper>
