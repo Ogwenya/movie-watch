@@ -1,13 +1,10 @@
 import CardGrid from "@/components/CardGrid";
 import { fetchFilms } from "@/utils/fetchFilms";
 
-export async function getData() {
-  const data = await fetchFilms("/trending/movie/week");
-  return data;
-}
+export const revalidate = 3600;
 
 const HomePage = async () => {
-  const movies = await getData();
+  const movies = await fetchFilms("/trending/movie/week");
   return <CardGrid data={movies} />;
 };
 

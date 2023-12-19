@@ -1,6 +1,8 @@
 import { fetchFilms } from "@/utils/fetchFilms";
 import CardGrid from "@/components/CardGrid";
 
+export const revalidate = 3600;
+
 export const metadata = {
   title: "Popular Tv Series",
   openGraph: {

@@ -6,6 +6,8 @@ import GenreAndOverview from "@/components/GenreAndOverview";
 import ProductionCompanies from "@/components/ProductionCompanies";
 import OtherStats from "@/components/OtherStats";
 
+export const revalidate = 3600;
+
 export async function generateMetadata({ params, searchParams }, parent) {
   const { film } = await fetchDetails(params.id, "movie");
 
