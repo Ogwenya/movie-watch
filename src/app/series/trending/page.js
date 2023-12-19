@@ -9,7 +9,7 @@ export const metadata = {
     title: "Trending Tv Series",
   },
   twitter: {
-    Trending,
+    title: "Trending Tv Series",
   },
 };
 
