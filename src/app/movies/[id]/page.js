@@ -38,7 +38,7 @@ const MovieDetails = async ({ params }) => {
 
       {/* genre and overview */}
       <GenreAndOverview overview={film.overview} genres={film.genres} />
-      <Group grow align="self-start" my={"xl"}>
+      <Group align="self-start" my={"xl"}>
         {/* other stats */}
         <OtherStats film={film} />
 

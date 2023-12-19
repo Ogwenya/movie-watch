@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   Text,
@@ -9,6 +11,7 @@ import {
   Avatar,
   rem,
   Card,
+  Grid,
 } from "@mantine/core";
 import { IconCoin, IconReceipt } from "@/icons/Icons";
 
@@ -50,57 +53,56 @@ const OtherStats = ({ film }) => {
           </Text>
         </Box>
 
-        <Group my="md" grow>
+        <Grid my="md">
           {/* budget */}
-          <Paper withBorder p="md" radius="md">
-            <Group justify="space-between">
-              <Text c="dimmed" size="xs" tt="uppercase" fw={700}>
-                Budget
-              </Text>
+          <Grid.Col span={{ base: 12, sm: 6 }}>
+            <Paper withBorder p="md" radius="md">
+              <Group justify="space-between">
+                <Text c="dimmed" size="xs" tt="uppercase" fw={700}>
+                  Budget
+                </Text>
 
-              <Avatar
-                variant="transparent"
-                radius="sm"
-                size="1.4rem"
-                stroke={1.5}
-                c="dimmed"
-              >
-                <IconReceipt />
-              </Avatar>
-            </Group>
+                <Avatar
+                  variant="transparent"
+                  radius="sm"
+                  size="1.4rem"
+                  stroke={1.5}
+                  c="dimmed"
+                >
+                  <IconReceipt />
+                </Avatar>
+              </Group>
 
-            <Group align="flex-end" gap="xs" mt={25}>
-              <Text fw={700} size="xl">
+              <Text fw={700} size="xl" mt={25}>
                 {formatCurrency(film.budget)}
               </Text>
-            </Group>
-          </Paper>
-
+            </Paper>
+          </Grid.Col>
           {/* revenue */}
-          <Paper withBorder p="md" radius="md">
-            <Group justify="space-between">
-              <Text c="dimmed" size="xs" tt="uppercase" fw={700}>
-                Revenue
-              </Text>
+          <Grid.Col span={{ base: 12, sm: 6 }}>
+            <Paper withBorder p="md" radius="md">
+              <Group justify="space-between">
+                <Text c="dimmed" size="xs" tt="uppercase" fw={700}>
+                  Revenue
+                </Text>
 
-              <Avatar
-                variant="transparent"
-                radius="sm"
-                size="1.4rem"
-                stroke={1.5}
-                c="dimmed"
-              >
-                <IconCoin />
-              </Avatar>
-            </Group>
+                <Avatar
+                  variant="transparent"
+                  radius="sm"
+                  size="1.4rem"
+                  stroke={1.5}
+                  c="dimmed"
+                >
+                  <IconCoin />
+                </Avatar>
+              </Group>
 
-            <Group align="flex-end" gap="xs" mt={25}>
-              <Text fw={700} size="xl">
+              <Text fw={700} size="xl" mt={25}>
                 {formatCurrency(film.revenue)}
               </Text>
-            </Group>
-          </Paper>
-        </Group>
+            </Paper>
+          </Grid.Col>
+        </Grid>
 
         <Button
           w={"100%"}

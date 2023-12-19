@@ -10,12 +10,12 @@ const ProductionCompanies = ({ companies }) => {
       bg={
         "light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6))"
       }
-      w={"max-content"}
-      maw={"fit-content"}
+      w={{ base: "100%", sm: "max-content" }}
+      maw={{ base: "100%", sm: "fit-content" }}
     >
       <Text fw={700}>Production Companies</Text>
 
-      <SimpleGrid cols={3} mt="md">
+      <SimpleGrid cols={{ base: 2, sm: 3 }} mt="md">
         {companies.map((company) => (
           <UnstyledButton
             key={company.name}
