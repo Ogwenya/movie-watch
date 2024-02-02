@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { MantineProvider, ColorSchemeScript } from "@mantine/core";
 import { Inter } from "next/font/google";
 import MantineLayout from "@/components/layout/MantineLayout";
@@ -88,7 +89,10 @@ export default function RootLayout({ children }) {
       </head>
       <body className={`${inter.className}`}>
         <MantineProvider defaultColorScheme="dark">
-          <MantineLayout>{children}</MantineLayout>
+          <MantineLayout>
+            {children}
+            <Analytics />
+          </MantineLayout>
         </MantineProvider>
       </body>
     </html>
